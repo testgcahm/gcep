@@ -1,11 +1,12 @@
 'use client';
 
-import { Book, Heart, Users, ChevronRight, BarChart3 } from 'lucide-react';
+import { Book, Heart, BarChart3, HeartHandshakeIcon } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import Button from '@/components/button';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/card';
 import { useRef } from 'react';
+import Link from 'next/link';
 
 const HomePage = () => {
   // Refs for animation triggers
@@ -22,9 +23,9 @@ const HomePage = () => {
     <div className="container mx-auto px-4 py-8">
       {/* Header Section */}
       <header className="text-center mb-12">
-        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-3 mb-5 mx-auto">
+        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 md:space-x-3 mb-5 mx-auto">
           <Image src="/logo.png" alt="GCEP Logo" width={240} height={240} className="w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44" />
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-primary drop-shadow-sm leading-snug">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary drop-shadow-sm leading-snug">
             Empowering Gujranwala&apos;s Children Through Education
           </h1>
         </div>
@@ -51,8 +52,8 @@ const HomePage = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[{ icon: Book, title: "Our Mission", text: "To ensure every child in Gujranwala has access to quality education, regardless of their financial circumstances." },
-            { icon: Heart, title: "Our Vision", text: "A future where orphan children are empowered to achieve their dreams through education." },
-            { icon: BarChart3, title: "Statistics", text: "Over 25 children are currently supported by GCEP." }
+          { icon: Heart, title: "Our Vision", text: "A future where orphan children are empowered to achieve their dreams through education." },
+          { icon: BarChart3, title: "Statistics", text: "Over 25 children are currently supported by GCEP." }
           ]
             .map((item, index) => (
               <motion.div
@@ -114,29 +115,21 @@ const HomePage = () => {
         className="mt-12 text-center"
       >
         <h2 className="text-3xl font-semibold text-secondary mb-8">Take Action</h2>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <motion.div whileHover={{ scale: 1.1 }} transition={{ type: 'spring', stiffness: 300 }}>
+
+        <motion.div className="inline-block">
+          <Link href="/donate">
             <Button
               variant="default"
               size="lg"
-              className="bg-primary text-white hover:bg-secondary transition-colors duration-300 px-8 py-3 rounded-full shadow-lg hover:shadow-xl"
+              className="bg-[#1D4ED8] text-white px-8 py-3 flex flex-row items-center cursor-pointer rounded-full text-lg font-bold shadow-md hover:shadow-lg transition-all duration-300 hover:bg-[#173B99]"
             >
               Donate Now
-              <ChevronRight className="ml-2 w-5 h-5" />
+              <HeartHandshakeIcon className="ml-2 w-6 h-6" />
             </Button>
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.1 }} transition={{ type: 'spring', stiffness: 300 }}>
-            <Button
-              variant="outline"
-              size="lg"
-              className="text-primary hover:bg-quaternary/50 hover:text-primary transition-colors duration-300 px-8 py-3 rounded-full border-2 border-primary shadow-md hover:shadow-lg"
-            >
-              Volunteer Today
-              <Users className="ml-2 w-5 h-5" />
-            </Button>
-          </motion.div>
-        </div>
+          </Link>
+        </motion.div>
       </motion.section>
+
     </div>
   );
 };

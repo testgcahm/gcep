@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   // Base URL for relative links
-  metadataBase: new URL("https://gmc-gcep.netlify.app"),
+  metadataBase: new URL("https://gcep.vercel.app"),
   
   title: {
     default: "Gujranwala Child Education Program Society",
@@ -42,20 +42,20 @@ export const metadata: Metadata = {
   },
   
   alternates: {
-    canonical: "https://gmc-gcep.netlify.app",
+    canonical: "https://gcep.vercel.app",
   },
   
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://gmc-gcep.netlify.app",
+    url: "https://gcep.vercel.app",
     title: "Gujranwala Child Education Program Society",
     description:
       "Empowering orphaned and underprivileged children in Gujranwala through free quality education. Support us in shaping a brighter future!",
     siteName: "GCEP Gujranwala",
     images: [
       {
-        url: "/og.jpg", // Ensure this image exists on your server
+        url: "/og.jpeg", // Ensure this image exists on your server
         width: 1200,
         height: 630,
         alt: "GCEP - Providing Education for Every Child",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: "GCEP Gujranwala",
     description:
       "Empowering orphaned and underprivileged children in Gujranwala through free quality education. Join our mission today!",
-    images: ["/og-image.jpg"],
+    images: ["/og.jpeg"],
   },
   
   robots: {
