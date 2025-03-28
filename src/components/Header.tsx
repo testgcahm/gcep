@@ -10,7 +10,7 @@ const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about' },
   { name: 'Donate', href: '/donate' },
-  { name: 'Volunteer', href: '/volunteer' },
+  { name: 'Programs', href: '/program' },
   { name: 'Contact', href: '/contact' },
 ];
 
