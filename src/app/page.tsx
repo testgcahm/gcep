@@ -1,103 +1,144 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import { Book, Heart, Users, ChevronRight, BarChart3 } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
+import Image from 'next/image';
+import Button from '@/componenets/button';
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/componenets/card';
+import { useRef } from 'react';
+
+const HomePage = () => {
+  // Refs for animation triggers
+  const missionRef = useRef(null);
+  const patronRef = useRef(null);
+  const actionRef = useRef(null);
+
+  // Detect when sections are in view
+  const isMissionInView = useInView(missionRef, { once: true, margin: '-100px' });
+  const isPatronInView = useInView(patronRef, { once: true, margin: '-100px' });
+  const isActionInView = useInView(actionRef, { once: true, margin: '-100px' });
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="container mx-auto px-4 py-8">
+      {/* Header Section */}
+      <header className="text-center mb-12">
+        <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-3 mb-5 mx-auto">
+          <Image src="/logo.png" alt="GCEP Logo" width={240} height={240} className="w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44" />
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-primary drop-shadow-sm leading-snug">
+            Empowering Gujranwala&apos;s Children Through Education
+          </h1>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        {/* Handwritten Effect Animation */}
+        <motion.p
+          initial={{ opacity: 0, clipPath: 'inset(0 100% 0 0)' }}
+          animate={{ opacity: 1, clipPath: 'inset(0 0% 0 0)' }}
+          transition={{ duration: 2, ease: 'easeOut' }}
+          className="dark:text-gray-300 mt-4 max-w-2xl mx-auto text-secondary"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          GCEP is a dedicated non-profit organization working to provide educational opportunities to deserving and orphan children in Gujranwala.
+          We believe that education is the key to a brighter future, and we strive to remove financial barriers that prevent children from reaching their full potential.
+        </motion.p>
+      </header>
+
+      {/* Mission, Vision & Statistics Section - Slide-in Effect */}
+      <motion.section
+        ref={missionRef}
+        initial={{ opacity: 0, x: -50 }}
+        animate={isMissionInView ? { opacity: 1, x: 0 } : {}}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="mb-12 flex justify-center"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[{ icon: Book, title: "Our Mission", text: "To ensure every child in Gujranwala has access to quality education, regardless of their financial circumstances." },
+            { icon: Heart, title: "Our Vision", text: "A future where orphan children are empowered to achieve their dreams through education." },
+            { icon: BarChart3, title: "Statistics", text: "Over 25 children are currently supported by GCEP." }
+          ]
+            .map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -30 }}
+                animate={isMissionInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+              >
+                <Card className={`bg-quaternary/50 border-quaternary/50 shadow-lg text-center p-6`}>
+                  <CardHeader className="flex flex-col items-center">
+                    <item.icon className="w-10 h-10 text-secondary mb-3" />
+                    <CardTitle className="text-xl font-semibold text-primary">{item.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">{item.text}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+        </div>
+      </motion.section>
+
+      {/* Patron Section - Scale-Up Effect */}
+      <motion.section
+        ref={patronRef}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={isPatronInView ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="text-center"
+      >
+        <h2 className="text-3xl font-semibold text-secondary mb-8">Patron in Charge</h2>
+        <Card className="mx-auto w-full max-w-xl bg-quaternary/50 border-quaternary/50 shadow-lg p-6 flex flex-col sm:flex-row items-center">
+          {/* Patron Image */}
+          <div className="w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 rounded-full overflow-hidden border-4 border-secondary">
+            <Image
+              src="/patron.jpeg"
+              alt="Patron"
+              width={160}
+              height={160}
+              className="object-cover w-full h-full object-top"
+            />
+          </div>
+          {/* Patron Info */}
+          <div className="sm:ml-6 mt-4 sm:mt-0 text-center sm:text-left">
+            <CardTitle className="text-xl sm:text-2xl font-semibold text-primary">Dr. Asim Saleem</CardTitle>
+            <CardDescription className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+              HOD Medicine, GMC Teaching Hospital
+            </CardDescription>
+          </div>
+        </Card>
+      </motion.section>
+
+      {/* Call to Action Section - Fade-in with Button Bounce */}
+      <motion.section
+        ref={actionRef}
+        initial={{ opacity: 0, y: 30 }}
+        animate={isActionInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="mt-12 text-center"
+      >
+        <h2 className="text-3xl font-semibold text-secondary mb-8">Take Action</h2>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <motion.div whileHover={{ scale: 1.1 }} transition={{ type: 'spring', stiffness: 300 }}>
+            <Button
+              variant="default"
+              size="lg"
+              className="bg-primary text-white hover:bg-secondary transition-colors duration-300 px-8 py-3 rounded-full shadow-lg hover:shadow-xl"
+            >
+              Donate Now
+              <ChevronRight className="ml-2 w-5 h-5" />
+            </Button>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.1 }} transition={{ type: 'spring', stiffness: 300 }}>
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-primary hover:bg-quaternary/50 hover:text-primary transition-colors duration-300 px-8 py-3 rounded-full border-2 border-primary shadow-md hover:shadow-lg"
+            >
+              Volunteer Today
+              <Users className="ml-2 w-5 h-5" />
+            </Button>
+          </motion.div>
+        </div>
+      </motion.section>
     </div>
   );
-}
+};
+
+export default HomePage;

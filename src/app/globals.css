@@ -24,3 +24,38 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@theme {
+  --color-primary: #1c458b;
+  --color-secondary: #177ca6;
+  --color-tertiary: #89cce7;
+  --color-quaternary: #cffdfe;
+  --breakpoint-xs: 280px;
+  --breakpoint-xs-md: 320px;
+  --breakpoint-sm-xs: 420px;
+  --breakpoint-sm-s: 560px;
+  --breakpoint-sm: 640px;
+  --breakpoint-sm-m: 700px;
+  --breakpoint-md: 768px;
+  --breakpoint-xlg: 1024px;
+}
+
+@layer utilities {
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: theme('colors.tertiary');
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: theme('colors.secondary');
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.secondary/80');
+  }
+}
