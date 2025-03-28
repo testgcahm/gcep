@@ -3,8 +3,8 @@
 import { Book, Heart, Users, ChevronRight, BarChart3 } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
-import Button from '@/componenets/button';
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/componenets/card';
+import Button from '@/components/button';
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/card';
 import { useRef } from 'react';
 
 const HomePage = () => {
