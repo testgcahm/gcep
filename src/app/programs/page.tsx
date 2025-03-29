@@ -17,7 +17,7 @@ const Programs: React.FC = () => {
                 <h2 className="text-4xl font-bold text-primary mb-4">Our Programs</h2>
                 <p className="text-gray-700 text-lg leading-relaxed">
                     At GCEP, we are committed to making education and support accessible to those in need. 
-                    Our programs provide <strong className='text-secondary'>financial aid, mentorship, and essential resources</strong> 
+                    Our programs provide <strong className='text-secondary'>financial aid, mentorship, and essential resources </strong> 
                     to deserving students and orphans, empowering them to build a brighter future.
                 </p>
             </motion.div>

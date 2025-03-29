@@ -14,9 +14,15 @@ const Donate: React.FC = () => {
 
   return (
     <section id="donate" className="p-6 text-center pt-20 min-h-screen bg-white">
-      <h2 className="text-3xl font-bold text-[var(--color-primary)] mb-6">Donate</h2>
-      <p className="text-[var(--color-primary)] max-w-2xl mx-auto font-semibold mb-6">
+      <h2 className="text-3xl font-bold text-primary mb-6">Donate</h2>
+      <p className="text-primary max-w-2xl mx-auto font-semibold mb-6">
         Your donation can change a child's life by providing them with the opportunity to receive a quality education.
+      </p>
+
+      {/* Hadith Section */}
+      <p className="text-secondary italic font-medium max-w-lg mx-auto mb-6">
+        "Charity does not decrease wealth"
+        <span className="block text-gray-500 text-sm">(Sahih Muslim)</span>
       </p>
 
       {/* Donation Methods Grid */}
@@ -58,7 +64,7 @@ const Donate: React.FC = () => {
         </div>
 
         {/* Meezan Bank Box */}
-        <div className="bg-[var(--color-secondary)] text-white p-6 rounded-lg max-sm:max-w-[320px] min-w-[251px] shadow-lg relative">
+        <div className="bg-secondary text-white p-6 rounded-lg max-sm:max-w-[320px] min-w-[251px] shadow-lg relative">
           <h3 className="text-xl font-bold mb-3">Meezan Bank</h3>
           <p className="text-sm font-medium">Account: 02880106836967</p>
           <p className="text-sm">Account Title: Saad Ahmad</p>
@@ -78,12 +84,12 @@ const Donate: React.FC = () => {
 
       {/* Donation Transparency Section */}
       <div className="bg-gray-100 p-6 mt-12 rounded-lg max-w-3xl mx-auto shadow-md">
-        <h3 className="text-2xl font-bold text-[var(--color-primary)] mb-3">Donation Transparency</h3>
+        <h3 className="text-2xl font-bold text-primary mb-3">Donation Transparency</h3>
         <p className="text-gray-700">
-          GCEP is committed to financial transparency. We publish regular reports on our 
-          <a href="https://www.facebook.com" className="text-blue-600 font-semibold hover:underline"> Facebook</a>&nbsp; 
-          & 
-          <a href="https://www.instagram.com" className="text-pink-600 font-semibold hover:underline"> Instagram</a> 
+          GCEP is committed to financial transparency. We publish regular reports on our
+          <a href="https://www.facebook.com" className="text-blue-600 font-semibold hover:underline"> Facebook</a>&nbsp;
+          &
+          <a href="https://www.instagram.com" className="text-pink-600 font-semibold hover:underline"> Instagram</a>
           &nbsp;pages, detailing how donations are used.
         </p>
       </div>

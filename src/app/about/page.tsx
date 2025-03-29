@@ -1,7 +1,6 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import Image from 'next/image';
 import { useRef } from 'react';
 import { BookOpen, ShieldCheck, Users, DollarSign, Camera, Globe, HeartHandshake } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/card';

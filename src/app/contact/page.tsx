@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
             <p className="text-primary text-center max-w-2xl mx-auto font-semibold mb-6">
                 Have questions or want to reach out? Contact us through the form below or connect with us on social media.
             </p>
-            <div className="flex justify-center space-x-6 mb-8">
+            <div className="flex justify-center space-x-6 mb-3">
                 <a href="https://www.instagram.com/gcep2017?igsh=YWMzaTExb2x0b3M4" target="_blank" className="cursor-pointer text-pink-600 hover:text-pink-400 transition">
                     <InstagramIcon />
                 </a>
