@@ -82,14 +82,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  return (<></>) 
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Analytics />
-        {/* <Header />
-        {children}*/} 
+        <Header />
+        {children}
       </body>
     </html>
   );
