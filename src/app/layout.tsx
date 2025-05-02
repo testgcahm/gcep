@@ -1,8 +1,9 @@
-8import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import { Analytics } from "@vercel/analytics/react"
+import VercelScreenOfDeath from "@/components/VercelScreenOfDeath";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,15 +18,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   // Base URL for relative links
   metadataBase: new URL("https://gcep.vercel.app"),
-  
+
   title: {
     default: "Gujranwala Child Education Program Society",
     template: "%s | GCEP Gujranwala",
   },
-  
+
   description:
     "Empowering orphaned and underprivileged children in Gujranwala through free quality education. Support us in shaping a brighter future!",
-  
+
   keywords: [
     "education",
     "charity",
@@ -35,16 +36,16 @@ export const metadata: Metadata = {
     "child education",
     "GCEP"
   ],
-  
+
   icons: {
     icon: "/logo.ico", // Updated for consistency
     shortcut: "/logo.ico",
   },
-  
+
   alternates: {
     canonical: "https://gcep.vercel.app",
   },
-  
+
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -62,7 +63,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  
+
   twitter: {
     card: "summary_large_image",
     title: "GCEP Gujranwala",
@@ -70,7 +71,7 @@ export const metadata: Metadata = {
       "Empowering orphaned and underprivileged children in Gujranwala through free quality education. Join our mission today!",
     images: ["/og.jpeg"],
   },
-  
+
   robots: {
     index: true,
     follow: true,
@@ -82,7 +83,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (<></>) 
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      ><Analytics />
+        <VercelScreenOfDeath message="An error occurred while loading the page. Please try again later." />
+      </body>
+    </html>
+  )
   return (
     <html lang="en">
       <body
