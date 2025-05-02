@@ -5,9 +5,36 @@ const VercelScreenOfDeath: React.FC<{ message?: string }> = ({ message }) => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#f8fafc] to-[#e5e7eb] text-[#222] px-4">
       <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center max-w-lg w-full border border-gray-200">
-        <svg width="64" height="64" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-6">
-          <circle cx="36" cy="36" r="36" fill="black" />
-          <path d="M36 18L54 54H18L36 18Z" fill="white" />
+        <svg
+          data-testid="geist-icon"
+          viewBox="0 0 16 16"
+          fill="white"
+          xmlns="http://www.w3.org/2000/svg"
+          className='w-16 h-16 mb-6 text-current'
+        >
+          <g clipPath="url(#clip0_872_3186)">
+            <circle
+              cx="8"
+              cy="8"
+              r="7.25"
+              fill="currentColor"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M8 4.5L11.5 10.625H4.5L8 4.5Z"
+              fill="var(--ds-gray-100)"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_872_3186">
+              <rect width="16" height="16" fill="white" />
+            </clipPath>
+          </defs>
         </svg>
         <h1 className="text-2xl font-extrabold mb-2 tracking-tight">Cloud Storage Limit Reached</h1>
         <p className="mb-4 text-center text-gray-700">
