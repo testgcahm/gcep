@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import InstallButton from "@/components/InstallButton";
 import { Analytics } from "@vercel/analytics/react"
-import VercelScreenOfDeath from "@/components/VercelScreenOfDeath";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -83,23 +83,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // return (
+  //   <html lang="en">
+  // <head>
+  //   <link rel="manifest" href="/manifest.webmanifest" />
+  // </head>
+  //     <body
+  //       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+  //     ><Analytics />
+  //       <VercelScreenOfDeath message="An error occurred while loading the page. Please try again later." />
+  //     </body>
+  //   </html>
+  // )
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      ><Analytics />
-        {/*<VercelScreenOfDeath message="An error occurred while loading the page. Please try again later." />*/} 
-      </body>
-    </html>
-  )
-  return (
-    <html lang="en">
+      <head>
+        <link rel="manifest" href="/manifest.webmanifest" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Analytics />
         <Header />
         {children}
+        <InstallButton />
       </body>
     </html>
   );
